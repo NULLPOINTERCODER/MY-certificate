@@ -1,0 +1,232 @@
+:root {
+    --header-footer-bg: #2c3e50; /* Original color restored */
+    --accent-blue: #3498db;
+    --bg-light: #f8fafc;
+    --text-main: #2c3e50;
+    --header-h: 85px;
+    --footer-h: 70px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    padding-top: var(--header-h);
+    padding-bottom: var(--footer-h);
+}
+
+/* --- Fixed Header --- */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: var(--header-h);
+    background-color: var(--header-footer-bg);
+    color: white;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.header-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.logo i {
+    color: var(--accent-blue);
+    font-size: 1.5rem;
+}
+
+.header-tag {
+    font-size: 0.8rem;
+    background: rgba(255,255,255,0.1);
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* --- Content Intro --- */
+.top-content {
+    text-align: center;
+    padding: 60px 20px 20px;
+}
+
+.sub-heading {
+    color: var(--accent-blue);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+}
+
+.top-content h1 {
+    font-size: 2.8rem;
+    margin: 10px 0;
+    font-weight: 800;
+}
+
+.top-content p {
+    color: #64748b;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.accent-line {
+    width: 50px;
+    height: 4px;
+    background: var(--accent-blue);
+    margin: 25px auto;
+    border-radius: 2px;
+}
+
+/* --- Gallery Grid --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    padding: 40px 20px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cert-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid #e2e8f0;
+}
+
+.cert-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-blue);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.img-holder {
+    height: 200px;
+    overflow: hidden;
+}
+
+.img-holder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.cert-card:hover img {
+    transform: scale(1.05);
+}
+
+.cert-details {
+    padding: 20px;
+}
+
+.cert-details h3 {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+    color: var(--header-footer-bg);
+}
+
+.cert-details p {
+    color: var(--accent-blue);
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+/* --- Fixed Footer --- */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: var(--footer-h);
+    background-color: var(--header-footer-bg);
+    color: white;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+.social-box a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+.social-box a:hover {
+    color: var(--accent-blue);
+}
+
+.footer-item i {
+    color: #e74c3c; /* Heart color */
+}
+
+/* --- Modal --- */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-box img {
+    max-width: 90%;
+    max-height: 80vh;
+    border: 4px solid white;
+}
+
+#caption {
+    color: white;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
